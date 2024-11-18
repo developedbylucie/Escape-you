@@ -1,0 +1,301 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/*============================
+        VARIABLES
+============================*/
+:root {
+    --boxes-drop-color:  #93553f;
+    --key-drop-color: rgb(161, 252, 252);
+    --perso-drop-color: rgb(255, 230, 250);
+    --messages-color: #000;
+}
+
+/*============================
+        DRAG & DROP
+============================*/
+.draggable {
+    cursor: url(asset_jeu/cursor_pick_hover.png), grab;
+}
+.draggable:active {
+    cursor: url(asset_jeu/cursor_pick_click.png), grabbing;
+}
+/* KEY */
+#droppable-key {
+    width: 55px;
+    height: 82px;
+    position: absolute;
+    top: 140px;
+    left: 66px;
+    z-index: 5;
+    border-radius: 16px;
+}
+.key-state-active { 
+    box-shadow: 0px 0px 30px 3px var(--key-drop-color);
+}
+/* BOXES */
+.box-state-active { 
+    box-shadow: 0px 0px 30px 3px var(--boxes-drop-color);
+}
+.droppable-box {
+    width: 85px;
+    height: 78px;
+    position: absolute;
+    left: 110px;
+    border-radius: 22px;
+}
+#droppable-box1 {
+    top: 331px;
+}
+#droppable-box2 {
+    top: 399px;
+}
+#droppable-box3 {
+    top: 468px;
+}
+
+/* CHARACTER */
+.perso-state-active {
+    box-shadow: 0px 0px 30px 3px var(--perso-drop-color);
+}
+#droppable-perso {
+    width: 100px;
+    height: 169px;
+    position: absolute;
+    top: 166px;
+    left: 106px;
+    z-index: 20;
+    border-radius: 22px;
+}
+
+
+/* MESSAGE */
+#message {
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    width: 100px;
+    height: 190px;
+    padding: 25px;
+
+    background-image: linear-gradient(rgba(67, 46, 7, 0.5), rgba(64, 47, 8, 0.5)),
+                        url(asset_jeu/card_text.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    color: var(--messages-color);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+
+    z-index: 80;
+    text-align: center;
+    overflow-wrap: break-word;
+}
+#div-final-message {
+    display: none;
+    opacity: 0;
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: brightness(0.4);
+
+    width: calc(100% - 200px);
+    height: 400px;
+    padding: 50px;
+    z-index: 100;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+}
+#final-message {
+    display: none;
+    width: 262px;
+    height: 100%;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+
+    background-image: linear-gradient(rgba(67, 46, 7, 0.5), rgba(64, 47, 8, 0.5)),
+                        url(asset_jeu/card_text.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    color: var(--messages-color);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 22px;
+}
+#final-message p {
+    text-align: center;
+    width: 210px;
+}
+
+
+
+/*============================
+        CONTAINER & SCENE
+============================*/
+#containerScene {
+    width: 1068px;
+    height: 602px;
+    cursor: url(asset_jeu/cursor_default.png), default;
+}
+#scene {
+    background: url(asset_jeu/room0_background.png);
+    width: 1068px;
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+
+/*============================
+        CHARACTER
+============================*/
+#perso {
+    position: absolute;
+    width: 230px;
+    top: 378px;
+    left: 310px;
+    z-index: 5;
+}
+
+
+/*============================
+        BOXES
+============================*/
+#boxes {
+    position: absolute;
+    width: 480px;
+    height: auto;
+    top: 234px;
+    left: 280px;
+}
+.box {
+    position: absolute;
+    top: 292px;
+    left: 462px;
+    width: 95px;
+    z-index: 15;
+}
+#box-to-open {
+    z-index: 10;
+    left: 496px;
+    top: 359px;
+    cursor: url(asset_jeu/cursor_info.png), default;
+}
+
+#shield {
+    width: 50px;
+    position: absolute;
+    top: 310px;
+    left: 518px;
+    z-index: 18;
+}
+
+
+/*============================
+        DECOR/BACKGROUND
+============================*/
+#rideau {
+    position: absolute;
+    width: 502px;
+    top: 71px;
+    right: 292px;
+    height: 470px;
+}
+#window-open {
+    position: absolute;
+    width: 80px;
+    top: 126px;
+    left: 57px;
+}
+
+
+/*============================
+        BAG
+============================*/
+#sacFerme, #sacOuvert {
+    position: absolute;
+    width: 134px;
+    top: 439px;
+    right: 53px;
+    z-index: 25;
+    cursor: url(asset_jeu/cursor_info.png), default;
+}
+
+
+/*============================
+        KEY
+============================*/
+#key {
+    width: 60px;
+    position: absolute;
+    top: 406px;
+    right: 83px;
+    z-index: 25;
+}
+
+
+
+/*============================
+        INVENTORY
+============================*/
+#inventory {
+    background: url(asset_jeu/Inventory.png);
+    position: absolute;
+    z-index: 25;
+    display: flex;
+    width: 350px;
+    height: 135px;
+    gap: 15px;
+    align-items: center;
+    padding: 0 0 0 39px;
+    box-sizing: border-box;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.inventory-item {
+    width: 56px;
+    height: 44px;
+    z-index: 40;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#key-inventory {
+    width: 60px;
+    z-index: 25;
+    position: absolute;
+}
+.flask-inventory {
+    width: 48px;
+    z-index: 80;
+    position: absolute;
+}
+#shield-inventory {
+    width: 40px;
+    z-index: 25;
+    position: absolute;
+}
+
+
+
+/*============================
+        POUDRE
+============================*/
+#poudre {
+    position: absolute;
+    width: 30px;
+    height: 22px;
+    top: 520px;
+    left: 607px;
+    z-index: 12;
+    cursor: url(asset_jeu/cursor_info.png)  22 22, default;
+}

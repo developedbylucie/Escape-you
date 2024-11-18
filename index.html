@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag & drop</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+</head>
+<body>
+    <div id="containerScene">
+        <div id="scene">
+            <!-- MESSAGES -->
+             <div id="message"></div>
+             <div id="div-final-message">
+                 <div id="final-message">
+                    <p>Vous avez réussi à vous échapper ! Bonne aventure !</p>
+                 </div>
+             </div>
+
+            <!-- CHARACTER -->
+            <img id="perso" class="draggable" src="asset_jeu/player_info_0.png">
+
+            <div id="poudre"></div>
+
+            <!-- BOXES -->
+            <img id="boxes" src="asset_jeu/room0_stuff.png">
+            <img id="box1" class="box draggable" data-drag="draggable1" src="asset_jeu/room0_onestuff.png">
+            <img id="box2" class="box draggable" data-drag="draggable2" src="asset_jeu/room0_onestuff.png">
+            <img id="box3" class="box draggable" data-drag="draggable3" src="asset_jeu/room0_onestuff.png">
+            <img id="box-to-open" class="box" src="asset_jeu/room0_onestuff.png">
+            <img id="shield" src="asset_jeu/WolfCrest.png" style="display: none;">
+
+            <img id="rideau" src="asset_jeu/room0_curtain.png">
+
+            <!-- BAG & KEY -->
+            <img id="sacFerme" data-open="0" src="asset_jeu/BackPackClosed.png">
+            <img id="key" src="asset_jeu/OldStorageKey.png" style="display: none;">
+            
+            <!-- INVENTORY -->
+            <div id="inventory">
+                <div id="inventory-item1" class="inventory-item"></div>
+                <div id="inventory-item2" class="inventory-item" data-empty=""></div>
+                <div id="inventory-item3" class="inventory-item" data-empty=""></div>
+                <div id="inventory-item4" class="inventory-item" data-empty=""></div>
+            </div>
+
+            <!-- DROPPABLE AREAS -->
+            <div id="droppable-key"></div>
+            <div id="droppable-perso"></div>
+            <div id="droppable-box1" class="droppable-box"></div>
+            <div id="droppable-box2" class="droppable-box"></div>
+            <div id="droppable-box3" class="droppable-box"></div>
+        </div>
+    </div>
+        
+
+</body>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="jquery-ui-1.14.1.custom/jquery-ui.js"></script>
+
+</html>
